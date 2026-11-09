@@ -45,6 +45,7 @@ final class ItchProviderTest extends TestCase
         self::assertSame([$amount, $currency, $initial], [$game?->price?->amount, $game?->price?->currency, $game?->price?->initial]);
     }
 
+    /** @return iterable<string, array{0: string, 1: int, 2: string, 3?: string, 4?: int}> */
     public static function prices(): iterable
     {
         yield 'yen' => ['¥500', 500, 'JPY'];
