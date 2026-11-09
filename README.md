@@ -1,6 +1,6 @@
-# omnigame/itch
+# omniplay/itch
 
-[omnisense/omnigame](https://github.com/glitchr-omnisense/omnigame)'s itch.io, under any PHP host:
+[omnisense/omniplay](https://github.com/glitchr-omnisense/omniplay)'s itch.io, under any PHP host:
 
 - **a game page's record**, no key: its public `data.json` (title, authors, price and the price
   before a sale, tags, cover, screenshots); a page is "creator/game" (`GameRef::itch('leafo/x-moon')`

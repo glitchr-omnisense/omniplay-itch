@@ -1,25 +1,25 @@
 <?php
 
-namespace Omnigame\Itch;
+namespace Omniplay\Itch;
 
-use Omnigame\Capabilities;
-use Omnigame\CatalogueInterface;
-use Omnigame\Exception\InvalidConfigException;
-use Omnigame\Exception\NotSupportedException;
-use Omnigame\Exception\ProviderException;
-use Omnigame\Http\Data;
-use Omnigame\Http\JsonClient;
-use Omnigame\LibraryInterface;
-use Omnigame\Model\Game;
-use Omnigame\Model\GameRef;
-use Omnigame\Model\Identifiers;
-use Omnigame\Model\Image;
-use Omnigame\Model\ImageKind;
-use Omnigame\Model\OwnedGame;
-use Omnigame\Model\Price;
-use Omnigame\Model\Scheme;
-use Omnigame\OwnershipInterface;
-use Omnigame\ProviderInterface;
+use Omniplay\Capabilities;
+use Omniplay\CatalogueInterface;
+use Omniplay\Exception\InvalidConfigException;
+use Omniplay\Exception\NotSupportedException;
+use Omniplay\Exception\ProviderException;
+use Omniplay\Http\Data;
+use Omniplay\Http\JsonClient;
+use Omniplay\LibraryInterface;
+use Omniplay\Model\Game;
+use Omniplay\Model\GameRef;
+use Omniplay\Model\Identifiers;
+use Omniplay\Model\Image;
+use Omniplay\Model\ImageKind;
+use Omniplay\Model\OwnedGame;
+use Omniplay\Model\Price;
+use Omniplay\Model\Scheme;
+use Omniplay\OwnershipInterface;
+use Omniplay\ProviderInterface;
 
 /**
  * itch.io: a game page's record from its public data.json (no key: the page

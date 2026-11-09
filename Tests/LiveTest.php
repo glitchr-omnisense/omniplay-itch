@@ -1,10 +1,10 @@
 <?php
 
-namespace Omnigame\Itch\Tests;
+namespace Omniplay\Itch\Tests;
 
-use Omnigame\Itch\ItchFactory;
-use Omnigame\Itch\ItchProvider;
-use Omnigame\Model\GameRef;
+use Omniplay\Itch\ItchFactory;
+use Omniplay\Itch\ItchProvider;
+use Omniplay\Model\GameRef;
 use PHPUnit\Framework\Attributes\Group;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpClient\HttpClient;
@@ -15,7 +15,7 @@ final class LiveTest extends TestCase
 {
     public function testAPage(): void
     {
-        $provider = (new ItchFactory(HttpClient::create(['timeout' => 30])))->create(['user_agent' => 'omnigame-tests/1.0 (+https://github.com/glitchr-omnisense/omnigame)']);
+        $provider = (new ItchFactory(HttpClient::create(['timeout' => 30])))->create(['user_agent' => 'omniplay-tests/1.0 (+https://github.com/glitchr-omnisense/omniplay)']);
         self::assertInstanceOf(ItchProvider::class, $provider);
 
         $game = $provider->game(GameRef::itch('leafo/x-moon'));

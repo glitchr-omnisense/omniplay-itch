@@ -1,7 +1,7 @@
 {
-    "name": "omnigame/itch",
+    "name": "omniplay/itch",
     "type": "library",
-    "description": "Omnigame's itch.io, under any PHP host: a game page's record from its public data.json with no key, and with a server-side API key whether a player owns one of your games (download keys) and the library of the key's own account.",
+    "description": "Omniplay's itch.io, under any PHP host: a game page's record from its public data.json with no key, and with a server-side API key whether a player owns one of your games (download keys) and the library of the key's own account.",
     "keywords": [
         "itch",
         "itch.io",
@@ -10,9 +10,9 @@
         "games",
         "download-keys",
         "framework-agnostic",
-        "omnigame"
+        "omniplay"
     ],
-    "homepage": "https://github.com/glitchr-omnisense/omnigame-itch",
+    "homepage": "https://github.com/glitchr-omnisense/omniplay-itch",
     "license": "MIT",
     "authors": [
         {
@@ -22,7 +22,7 @@
     ],
     "require": {
         "php": ">=8.2",
-        "omnisense/omnigame": "^1.0@dev",
+        "omnisense/omniplay": "^1.0@dev",
         "symfony/http-client": "^6.4|^7.0|^8.0"
     },
     "require-dev": {
@@ -31,7 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Omnigame\\Itch\\": ""
+            "Omniplay\\Itch\\": ""
         },
         "exclude-from-classmap": [
             "/Tests/"
@@ -39,7 +39,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Omnigame\\Itch\\Tests\\": "Tests/"
+            "Omniplay\\Itch\\Tests\\": "Tests/"
         }
     },
     "extra": {

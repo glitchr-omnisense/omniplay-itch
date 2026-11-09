@@ -1,6 +1,6 @@
-# omnigame/itch
+# omniplay/itch
 
-itch.io for [omnisense/omnigame](https://github.com/glitchr-omnisense/omnigame): a game page's
+itch.io for [omnisense/omniplay](https://github.com/glitchr-omnisense/omniplay): a game page's
 record with no key, and - with a server-side API key - whether a player owns one of your games and
 the library of the key's own account. The provider calls:
 
@@ -16,10 +16,10 @@ The key is sent as `Authorization: Bearer`. itch.io has no search API: no search
 ## Installation
 
 ```sh
-composer require omnigame/itch
+composer require omniplay/itch
 ```
 
-Requires PHP 8.2, `omnisense/omnigame` (1.x) and `symfony/http-client` (6.4, 7 or 8).
+Requires PHP 8.2, `omnisense/omniplay` (1.x) and `symfony/http-client` (6.4, 7 or 8).
 
 ## Credentials
 
@@ -32,7 +32,7 @@ Requires PHP 8.2, `omnisense/omnigame` (1.x) and `symfony/http-client` (6.4, 7 o
 | Option | Type | Default | Required | |
 |---|---|---|---|---|
 | `key` | string | `null` | no | the server-side API key |
-| `user_agent` | string | `omnigame/1.0 (+https://github.com/glitchr-omnisense/omnigame)` | no | |
+| `user_agent` | string | `omniplay/1.0 (+https://github.com/glitchr-omnisense/omniplay)` | no | |
 | `api` | string | `https://api.itch.io` | no | the server-side API |
 
 ## Capabilities
@@ -80,7 +80,7 @@ playtime.
 ## Example
 
 Run live on 2026-10-27 (06:18 UTC), through the core's
-[installation script](https://github.com/glitchr-omnisense/omnigame/blob/1.x/docs/installation.md#the-stores-apis) - one call:
+[installation script](https://github.com/glitchr-omnisense/omniplay/blob/1.x/docs/installation.md#the-stores-apis) - one call:
 
 ```php
 $itch = (new ItchFactory(HttpClient::create()))->create(['key' => getenv('ITCH_API_KEY')]);
@@ -97,11 +97,11 @@ In Symfony:
 
 ```yaml
 services:
-    Omnigame\Itch\ItchFactory:
+    Omniplay\Itch\ItchFactory:
         arguments: ['@http_client']
-    Omnigame\Registry:
+    Omniplay\Registry:
         arguments:
-            $factories: ['@Omnigame\Itch\ItchFactory']
+            $factories: ['@Omniplay\Itch\ItchFactory']
             $config:
                 itch: { factory: itch, options: { key: '%env(default::ITCH_API_KEY)%' } }
 ```
@@ -109,7 +109,7 @@ services:
 ## Errors
 
 - unknown page: `null`; a ref of another scheme: `NotSupportedException`; search:
-  `NotSupportedException` from the registry (`The "i" provider (Omnigame\Itch\ItchProvider) does not
+  `NotSupportedException` from the registry (`The "i" provider (Omniplay\Itch\ItchProvider) does not
   search.`);
 - no `key` for ownership or the library, a library of anyone but `me`: `InvalidConfigException`;
 - a status of 400 or more but 404 (other than "no download key"): `ProviderException`; a network

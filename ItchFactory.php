@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnigame\Itch;
+namespace Omniplay\Itch;
 
-use Omnigame\Config;
-use Omnigame\Http\JsonClient;
-use Omnigame\ProviderFactory;
-use Omnigame\ProviderInterface;
+use Omniplay\Config;
+use Omniplay\Http\JsonClient;
+use Omniplay\ProviderFactory;
+use Omniplay\ProviderInterface;
 use Symfony\Component\HttpClient\HttpClient;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
@@ -23,11 +23,11 @@ final class ItchFactory extends ProviderFactory
     protected function populate(Config $c): void
     {
         $c->defaults([
-            'omnigame.factory_name' => 'itch',
-            'omnigame.factory_title' => 'itch.io',
-            'omnigame.required_options' => [],
+            'omniplay.factory_name' => 'itch',
+            'omniplay.factory_title' => 'itch.io',
+            'omniplay.required_options' => [],
             'key' => null,
-            'user_agent' => 'omnigame/1.0 (+https://github.com/glitchr-omnisense/omnigame)',
+            'user_agent' => 'omniplay/1.0 (+https://github.com/glitchr-omnisense/omniplay)',
             'api' => 'https://api.itch.io',
         ]);
     }

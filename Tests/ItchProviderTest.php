@@ -1,15 +1,15 @@
 <?php
 
-namespace Omnigame\Itch\Tests;
+namespace Omniplay\Itch\Tests;
 
-use Omnigame\Exception\InvalidConfigException;
-use Omnigame\Exception\ProviderException;
-use Omnigame\Itch\ItchFactory;
-use Omnigame\Itch\ItchProvider;
-use Omnigame\Model\GameRef;
-use Omnigame\Model\ImageKind;
-use Omnigame\Model\OwnedGame;
-use Omnigame\Testing\RecordedHttpClient;
+use Omniplay\Exception\InvalidConfigException;
+use Omniplay\Exception\ProviderException;
+use Omniplay\Itch\ItchFactory;
+use Omniplay\Itch\ItchProvider;
+use Omniplay\Model\GameRef;
+use Omniplay\Model\ImageKind;
+use Omniplay\Model\OwnedGame;
+use Omniplay\Testing\RecordedHttpClient;
 use PHPUnit\Framework\TestCase;
 
 /**

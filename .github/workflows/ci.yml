@@ -16,4 +16,4 @@ jobs:
   package:
     uses: glitchr-studio/ci/.github/workflows/php-package.yml@main
     with:
-      smoke-class: 'Omnigame\Itch\ItchProvider'
+      smoke-class: 'Omniplay\Itch\ItchProvider'

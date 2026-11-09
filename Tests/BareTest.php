@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnigame\Itch\Tests;
+namespace Omniplay\Itch\Tests;
 
-use Omnigame\Itch\ItchProvider;
-use Omnigame\Testing\BareTestCase;
+use Omniplay\Itch\ItchProvider;
+use Omniplay\Testing\BareTestCase;
 
-/** omnigame/itch's classes load with omnisense/omnigame and Symfony's HTTP client contracts alone. */
+/** omniplay/itch's classes load with omnisense/omniplay and Symfony's HTTP client contracts alone. */
 final class BareTest extends BareTestCase
 {
     protected static function entryClass(): string
