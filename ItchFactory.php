@@ -34,6 +34,6 @@ final class ItchFactory extends ProviderFactory
 
     protected function build(Config $c): ProviderInterface
     {
-        return new ItchProvider(new JsonClient($this->http ?? HttpClient::create(['timeout' => 20]), 'itch.io', ['Accept' => 'application/json', 'User-Agent' => (string) $c->string('user_agent')]), $c->string('key'), rtrim((string) $c->string('api'), '/'));
+        return new ItchProvider(new JsonClient($this->http ?? HttpClient::create(['timeout' => 20]), 'itch.io', ['Accept' => 'application/json', 'User-Agent' => (string) $c->string('user_agent')], $c->backoff()), $c->string('key'), rtrim((string) $c->string('api'), '/'));
     }
 }

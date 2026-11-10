@@ -20,6 +20,8 @@ use Omniplay\Model\Price;
 use Omniplay\Model\Scheme;
 use Omniplay\OwnershipInterface;
 use Omniplay\ProviderInterface;
+use Omnisense\Contracts\Policy\DeclaresUsagePolicyInterface;
+use Omnisense\Contracts\Policy\UsagePolicy;
 
 /**
  * itch.io: a game page's record from its public data.json (no key: the page
@@ -28,8 +30,13 @@ use Omniplay\ProviderInterface;
  * download key or a purchase: /games/{id}/download_keys) and the library of
  * the key's own account (/profile/owned-keys). itch.io has no search API.
  */
-final class ItchProvider implements ProviderInterface, CatalogueInterface, OwnershipInterface, LibraryInterface
+final class ItchProvider implements ProviderInterface, CatalogueInterface, OwnershipInterface, LibraryInterface, DeclaresUsagePolicyInterface
 {
+    /** itch.io's usage policy, as its terms read on the day it says (provenance.verifiedAt). */
+    public const POLICY = __DIR__.'/policy.json';
+
+    private static ?UsagePolicy $policy = null;
+
     private const CURRENCIES = ['$' => 'USD', '€' => 'EUR', '£' => 'GBP', '¥' => 'JPY'];
 
     /** ISO 4217's minor unit exponents that are not 2. */
@@ -49,6 +56,11 @@ final class ItchProvider implements ProviderInterface, CatalogueInterface, Owner
         return 'itch.io';
     }
 
+    public function usagePolicy(): UsagePolicy
+    {
+        return self::$policy ??= UsagePolicy::fromFile(self::POLICY);
+    }
+
     public function capabilities(): Capabilities
     {
         return new Capabilities(
@@ -61,6 +73,7 @@ final class ItchProvider implements ProviderInterface, CatalogueInterface, Owner
             attribution: 'Data from itch.io',
             terms: ['https://itch.io/docs/legal/terms', 'https://itch.io/docs/api/serverside'],
             keyless: true,
+            policy: $this->usagePolicy(),
         );
     }
 

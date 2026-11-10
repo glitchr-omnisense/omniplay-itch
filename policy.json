@@ -1,0 +1,37 @@
+{
+    "$schema": "https://github.com/glitchr-omnisense/contracts/blob/1.x/resources/usage-policy.schema.json",
+    "provider": "itch",
+    "rateLimits": null,
+    "rights": {
+        "commercial": "unknown",
+        "openSourceRequired": null,
+        "caching": {
+            "permission": "unknown",
+            "maxTtl": null
+        },
+        "storage": "unknown",
+        "redistribution": "unknown",
+        "attribution": {
+            "required": false,
+            "text": null,
+            "url": null,
+            "where": []
+        },
+        "licence": null
+    },
+    "requirements": {
+        "key": false,
+        "userAgent": {
+            "required": false,
+            "pattern": null
+        }
+    },
+    "provenance": {
+        "terms": "https://itch.io/docs/legal/terms",
+        "policy": "https://itch.io/docs/api/serverside",
+        "verifiedAt": "2026-11-10",
+        "declaredBy": "maintainer",
+        "contact": "https://itch.io/support",
+        "notes": "itch.io's server-side API documentation and terms (updated April 15 2023) state no rate limit and say nothing of commercial use, caching, storage or credit of its data. A game page's data.json needs no key; a player's ownership and library need an API key (the key option: a key generated in the account's settings reaches every endpoint, as a bearer token). The terms forbid harvesting or collecting information about others: a purchase looked up by e-mail address is for an address the site verified first."
+    }
+}

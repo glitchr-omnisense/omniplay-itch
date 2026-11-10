@@ -130,3 +130,7 @@ download key found" (its status) is not documented.
 An independent, unofficial client, affiliated with itch.io in no way. Whoever runs it keeps the
 [server-side API's](https://itch.io/docs/api/serverside) rules (scopes, verified e-mails) and
 itch.io's [terms](https://itch.io/docs/legal/terms): see the README.
+
+## Usage policy
+
+The package declares its usage policy as data, in [policy.json](../policy.json) (omnisense/contracts' schema). itch.io's terms and server-side API page (read on 2026-11-10) state no rate limit, and say nothing of commercial use, caching or credit: all are declared unknown. A game page needs no key; ownership and libraries need the `key` option. `ItchProvider::usagePolicy()` reads it, and its Capabilities carry it (`policy()`).
