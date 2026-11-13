@@ -20,6 +20,18 @@ $owns = $itch->owns('12345', GameRef::itch('leafo/x-moon'));
 
 Options: `key`, `user_agent`, `api` ("https://api.itch.io").
 
+## Install
+
+```sh
+composer require omniplay/itch
+```
+
+It requires `omnisense/omniplay` `^1.0`, installed with it. A real call needs: no key for a game's
+page; **an itch.io API key** for its own library and ownership. With no account, its tests run on
+recorded answers (a `MockHttpClient`), and
+[omnisense/omniplay](https://github.com/glitchr-omnisense/omniplay#install-and-a-first-call)'s
+README has a first call that runs without one.
+
 ## itch.io's terms, as read on 2026-10-24
 
 From the [server-side API documentation](https://itch.io/docs/api/serverside): a key sent as
